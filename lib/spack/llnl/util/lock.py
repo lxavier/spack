@@ -196,7 +196,7 @@ class Lock(object):
             return total_wait_time, num_attempts
 
         raise LockTimeoutError("Timed out waiting for a {0} , \n path:{1} , file:{2} "
-                               .format(lock_type[op]),self.path,self._file))
+                               .format(lock_type[op],self.path,self._file))
 
     def _poll_lock(self, op):
         """Attempt to acquire the lock in a non-blocking manner. Return whether
