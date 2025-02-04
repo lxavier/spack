@@ -1256,6 +1256,7 @@ class Repo:
         for key, val in overridden_attrs.items():
             setattr(cls, key, val)
         for key in attrs_exclusively_from_config:
+            print("dbg1",cls,key)
             delattr(cls, key)
 
         # Keep track of every class attribute that is overridden by the config:
