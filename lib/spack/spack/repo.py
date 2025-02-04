@@ -1251,13 +1251,14 @@ class Repo:
 
         overridden_attrs = getattr(cls, "overridden_attrs", {})
         attrs_exclusively_from_config = getattr(cls, "attrs_exclusively_from_config", [])
+        print("dbgm1",attrs_exclusively_from_config)
         # Clear any prior changes to class attributes in case the config has
         # since changed
         for key, val in overridden_attrs.items():
             setattr(cls, key, val)
         for key in attrs_exclusively_from_config:
             print("dbg1",cls,key)
-            cls.__dir__
+            print("dbg2",dir(cls))
             delattr(cls, key)
 
         # Keep track of every class attribute that is overridden by the config:
